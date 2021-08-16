@@ -15,21 +15,22 @@ import com.binu.springframework.spring5jokesappv2.service.JokesService;
 public class JokesController {
 
 	
-	JokesService jokesService;
+	private final JokesService jokesService;
 
 	@Autowired
 	public JokesController(JokesService jokesService) {
 		this.jokesService = jokesService;
 	}
 	
- 
+	@RequestMapping({"/",""})
 	public String displayRandomJoke(Model model) {
 		
 		
 		Joke randomJoke = jokesService.getRandomJoke();
 				
-		model.addAttribute("random-joke",randomJoke);
-		
+		model.addAttribute("randomJoke",randomJoke);	
+		model.addAttribute("randomJokeId",randomJoke.getId());
+		model.addAttribute("randomJokeText",randomJoke.getText());		
 		return "jokes/index";
 		
 	}
@@ -41,9 +42,9 @@ public class JokesController {
 		
 		List<Joke> randomJokes = jokesService.getRandomJokes(5);
 				
-		model.addAttribute("random-jokes",randomJokes);
+		model.addAttribute("randomJokes",randomJokes);
 		
-		return "jokes/list";
+		return "jokes/list5Jokes";
 		
 	}
 	

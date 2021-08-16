@@ -7,15 +7,19 @@
 	<body>
 		<h1>5 Random Chuck Norris Jokes</h1>
 			
-		<table>
-			<tr>
-				<th>Joke Id</th>
-				<th>Joke Description</th>
+			
+ 
+		<table style="border: 1px solid black; background-color: lightgray;">
+			<tr style="border: 1px;">
+				<th style="border: 1px;">Joke Id</th>
+				<th style="border: 1px;">Joke Text</th>
 			</tr>
 			<tr th:each="randomjoke : ${randomJokes}">
-				<td th:text="${randomjoke.id}"></td>
-				<td th:text="${randomjoke.text}"></td>
+				<td style="border: 1px  solid black;" th:text="${randomjoke.id}"></td>
+				<td style="border: 1px  solid black;" th:text="${randomjoke.text}"></td>
 			</tr>
 		</table>
+		
+ 
 	</body>
 </html>

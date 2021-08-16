@@ -13,11 +13,11 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 @Service
 public class JokesServiceImpl implements JokesService {
 
-	private ChuckNorrisQuotes quotes;
+	private final ChuckNorrisQuotes quotes;
 	
 	@Autowired
-	public JokesServiceImpl(ChuckNorrisQuotes quotes) {
-		this.quotes = quotes;
+	public JokesServiceImpl() {
+		this.quotes = new ChuckNorrisQuotes();
 	}
 
 	@Override

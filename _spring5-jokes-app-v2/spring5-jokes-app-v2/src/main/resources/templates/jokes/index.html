@@ -7,14 +7,14 @@
 	<body>
 		<h1>Random Chuck Norris Joke</h1>
 			
-		<table>
-			<tr>
+		<table style="border: 1px  solid black; background-color: lightblue;">
+			<tr style="border: 1px  solid black;">
 				<th>Joke Id</th>
-				<th>Joke Description</th>
+				<th>Joke Text</th>
 			</tr>
-			<tr th:each="randomjoke : ${randomJokes}">
-				<td th:text="${randomjoke.id}"></td>
-				<td th:text="${randomjoke.text}"></td>
+			<tr>
+				<td style="border: 1px  solid black;" th:text="${randomJoke.id}"></td>
+				<td style="border: 1px  solid black;" th:text="${randomJoke.text}"></td>
 			</tr>
 		</table>
 	</body>
